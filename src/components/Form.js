@@ -11,7 +11,7 @@ const Form = ({handleColors, colors}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let myItem = {name:colName, value:colValue};
-        handleColors([...colors, myItem]);
+        handleColors([myItem, ...colors]);
         // console.log(colors);
         setColName();
         setColValue();

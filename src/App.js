@@ -13,9 +13,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home/>}>
-          <Route path="colors" element={<ColorList colors={colors}/>}></Route>
-        </Route>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="colors" element={<ColorList colors={colors}/>}></Route>
         <Route path="colors/new" element={<Form handleColors={setColors} colors={colors}/>}/>
         <Route path="colors/:name" element={<Color/>}></Route>
       </Routes>

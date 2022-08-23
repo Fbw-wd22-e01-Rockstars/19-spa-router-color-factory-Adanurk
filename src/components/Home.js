@@ -8,7 +8,8 @@ const Home = () => {
             <h2>Welcome to the color factory</h2>
             <Link to="colors/new"><h1 className='add'>Add Color</h1></Link>
         </header>
-        <Outlet/>
+        <Link to="colors/">See All Colors</Link>
+        {/* <Outlet/> */}
     </div>
   )
 }
