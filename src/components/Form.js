@@ -1,25 +1,23 @@
 import React from 'react'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Form = ({handleColors, colors}) => {
     const [colName, setColName] = useState();
     const [colValue, setColValue] = useState();
+    const navigate = useNavigate();
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         let myItem = {name:colName, value:colValue};
         handleColors([...colors, myItem]);
-        console.log(colors);
-        
+        // console.log(colors);
         setColName();
         setColValue();
+        navigate("/colors");
     }
 
-    //! nasil yenileyecek ve inputlari bosaltacak?
-
-    
-    
   return (
     <form onSubmit={handleSubmit}>
         <label> Name: <input type="text" onChange={(e) => {setColName(e.target.value)}}/> </label>

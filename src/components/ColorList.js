@@ -13,7 +13,7 @@ const ColorList = ({colors}) => {
                 {
                     colors.map(color => {
                         return (
-                            <li key={color.name}><Link to={`/colors/${color.name}`}>{color.name}</Link></li>
+                            <li key={color.name}><Link to={`/colors/${color.name}`} state={color}>{color.name}</Link></li>
                         )
                     })
                 }
