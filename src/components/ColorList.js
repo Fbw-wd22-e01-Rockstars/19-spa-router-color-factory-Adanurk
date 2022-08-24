@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const ColorList = ({colors}) => {
+const ColorList = ({colors, delColor}) => {
     
   return (
     <div className='home'>
@@ -19,7 +19,7 @@ const ColorList = ({colors}) => {
                 {
                     colors.map(color => {
                         return (
-                            <li key={color.name}><Link to={`/colors/${color.name}`} state={color}>{color.name}</Link></li>
+                            <li key={color.name}><Link to={`/colors/${color.name}`} state={color}>{color.name}</Link> <span onClick={()=> {delColor(color.name)}}>X</span></li>
                         )
                     })
                 }

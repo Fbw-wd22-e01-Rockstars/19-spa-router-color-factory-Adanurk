@@ -12,6 +12,7 @@ const Form = ({handleColors, colors}) => {
         e.preventDefault();
         let myItem = {name:colName, value:colValue};
         handleColors([myItem, ...colors]);
+        localStorage.setItem("colors", JSON.stringify([myItem, ...colors]))
         // console.log(colors);
         setColName();
         setColValue();

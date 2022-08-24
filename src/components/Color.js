@@ -1,11 +1,21 @@
 import React from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams, Navigate } from 'react-router-dom';
 
-const Color = ({info}) => {
+
+//useNavigate hook => it navigates user from one to another page;
+//const navigate = useNavigate()
+//button kullanmak istersen mesela navlink yerine bunu kullanabilirsin, onclick te arrow fuznction suraya git diyerek!
+
+const Color = ({colors}) => {
   const params = useParams();
   const location = useLocation();
   console.log(params);
   console.log(location);
+  const color = colors.some(item => item.name === params.name)
+ 
+ if(!color){
+   return <Navigate to="/colors"/>
+ }
 
   return (
     <div className='big-color' style={{backgroundColor:`${location?.state?.value}`}}>
